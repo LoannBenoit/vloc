@@ -1,0 +1,290 @@
+
+@media all and (min-width: 1440px){
+	.first {
+		height: 70%;
+	}
+}
+
+@media all and (min-width: 1200px) and (max-width: 1440px){
+	.first {
+		height: 70%;
+	}
+}
+
+@media all and (min-width: 970px) and (max-width: 1200px){
+	.first {
+		height: 52%;
+	}
+}
+
+@media all and (max-width: 970px) {
+	.first {
+		height: 41%;
+	}
+}
+
+@media all and (max-width: 770px) {
+	.first {
+		height: 30%
+	}
+}
+
+@media all and (max-width: 600px) {
+	.first {
+		height: 25%;
+	}
+}
+
+@media all and (min-width: 200px) and (max-width: 470px) {
+	.first {
+		height: 28%;
+	}
+}
+
+html, body {
+    width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+}
+
+.first {
+	width: 100%;
+	margin: 0px;
+	overflow: hidden;
+}
+
+#slider {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	padding: 0px;
+}
+	
+.prev, .next {
+		position: absolute;
+		z-index: 999;
+		width: 100%;
+		height: 100%;
+	  text-decoration: none;
+	  font-weight: 600;
+	  cursor: pointer;
+	}
+
+
+
+.arrows {
+	font-size: 3em;
+}
+	  
+.arrow_left, .arrow_right {
+	width: 28%;
+	height: 100%;
+	position: absolute;
+}
+
+.arrow_left {
+	background: linear-gradient(to right, rgba(5, 5, 5, 0.25), transparent);
+}
+
+.arrow_right {
+	background: linear-gradient(to left, rgba(5, 5, 5, 0.25), transparent);
+	right: 0%;
+}
+
+.next {
+	right: 0%;
+}
+
+.next:hover {
+	background: linear-gradient(to left, rgba(5, 5, 5, 0.699), transparent);
+}
+
+.prev:hover {
+	background: linear-gradient(to right, rgba(5, 5, 5, 0.699), transparent);
+}
+
+ul {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	overflow: hidden;
+}
+
+.lyon1, .lyon2, .lyon3 {
+	width: 100%;
+	position: relative;
+	bottom: 3%;
+}
+
+.second {
+	width: 100%;
+	height: 100%;
+	margin: 0%;
+	padding: 0%;
+}
+
+#map {
+	height: 100%;
+	padding: 0px;
+}
+
+#detail {
+	margin-top: 15px 2%;
+	padding: 2%;
+}
+
+.second_zone {
+	position: relative;
+	background-color: #394955;
+	height: 100%;
+}
+
+label {
+	width: auto;
+}
+
+
+.place, .bike, .done {
+	color: #78bced;
+}
+
+.input_field {
+	padding-left: 10px;
+}
+
+#text-dispo {
+	position: absolute;
+	top: 12px;
+	left: 56px;
+	color: white;
+}
+
+#bikes {
+	width: 79%;
+}
+
+#available {
+	width: 55%;
+	padding-left: 93px;
+}
+
+input[type=text]:not(.browser-default):not([readonly])+label, input[type=text]:not(.browser-default):not([readonly])::placeholder {
+	color: white;
+}
+
+input[type=text]:not(.browser-default):not([readonly]) {
+	border-bottom: 1px solid #78bced;
+	color: white;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+	border-bottom: 1px solid #78bced;
+	box-shadow: 0 1px 0 0 #78bced;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) + label {
+	color: #78bced;
+}
+
+.input-field input[type=text]:focus + label {
+	color: #000;
+}
+
+#name, #first_name {
+	pointer-events: none;
+}
+
+#submit, #cancel {
+	border-radius: 50px;
+	font-weight: bold;
+}
+
+#submit {
+	visibility: hidden;
+	background: lightgrey;
+}
+
+#cancel {
+	display: none;
+	background: #78bced;
+}
+
+#submit:hover {
+	box-shadow: 0px 5px 25px 2px #00000070;
+}
+
+.waves-effect {
+	transition: .1s ease-out;
+}
+
+.canvas {
+	display: flex;
+}
+
+#canvas {
+	position: relative;
+	margin: 0px auto;
+}
+
+#signature {
+	background-color: white;
+
+}
+
+#reset {
+	position: absolute;
+	top: 0px;
+	display: none;
+}
+#time_zone {
+	display: none;
+	margin: 0px;
+}
+
+#time_zone .time_text {
+	padding: 0px;
+	font-size: 15px;
+	color: white;
+	position: relative;
+	
+	top: 10%;
+}
+
+#time_text, #counterMinutes, #timeSeparator, #counterSecondes {
+	font-size: 20px;
+}
+
+.time_left {
+	display: flex;
+}
+
+#timer {
+	margin: 0px;
+	padding-right: 5px;
+	color: #78bced;
+}
+
+.progress {
+	width: 100%;
+	margin: .7rem 0 1rem 0;
+}
+
+#determinate {
+	background-color: #26a69a;
+}

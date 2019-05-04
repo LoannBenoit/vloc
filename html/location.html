@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Location</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">      
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+   
+  <body>
+    <div class="row first">
+      <div id="slider" class="col s12">
+        <div class="arrow_left"><a href="#" class="prev"></a></div>
+        <div class="arrow_right"><a href="#" class="next"></a></div>
+        <ul>
+          <li><img class="lyon1 responsive-img" src="../images/lyon1Text.png" alt="Montpellier 1"></li>
+          <li><img class="lyon2 responsive-img" src="../images/carteText.png" alt="Montpellier vélo"></li>
+          <li><img class="lyon3 responsive-img" src="../images/velolyontext.png" alt="Vélos de Montpellier"></li>
+          <li><img class="lyon3 responsive-img" src="../images/velo2Text.png" alt="Vélos de Montpellier"></li>
+        </ul>  
+      </div>
+    </div>
+  
+
+    <div class="row second">
+      <div id="map" class="col s12 m7"></div>
+
+      <div class="col s12 m5 second_zone ">
+        <form id="form" action="location.html">
+          <div id="detail">
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix place">place</i>
+                <input placeholder="Nom de la station :" type="text" name="station" id="station" disabled>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12 m5">
+                <i class="material-icons prefix bike">directions_bike</i>
+                <input placeholder="Places : " name="bikes" type="text" id="bikes" disabled> 
+              </div>
+
+              <div class="input-field col s12 m5">
+                <i class="material-icons prefix done">done</i>
+                <span id="text-dispo">Disponibles :</span><input type="text" name="available" id="available" disabled>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="input-field col s12 m6">
+                <input id="name" type="text" name="name">
+                <label for="name">Nom :</label>
+              </div>
+
+              <div class="input-field col s12 m6">
+                <input id="first_name" type="text" name="first_name">
+                <label for="first_name">Prénom :</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="reserver">
+                <button id="submit" class="col s12 offset-m4 m4 btn-large waves-effect center" type="button" name="action">Réserver</button>
+              </div>
+              <div class="annuler">
+                <button id="cancel" class="col s12 offset-m4 m4 btn-large waves-effect center" type="button" name="action">Annuler</button>
+              </div>
+
+            </div>
+        
+          </div>
+        </form>
+        <div class="row canvas">
+          <div id="canvas">
+            <canvas id="signature"></canvas>
+            <button id="reset">Effacer</button>
+          </div>
+        </div>
+
+        <div id="time_zone" class="row ">
+            <div class="col s12 time_text center"><h5 id="time_text">Votre vélo est réservé à la station <span id="ticketStation"></span> au nom de <span id="ticketName"></span> <span id="ticketFirstName"></span></h5>
+            <div class="counterText"><span id="counterMinutes"></span><span id="timeSeparator"> : </span><span id="counterSecondes"></span></div> 
+          </div>
+        
+            <div class="col s12 time_left">
+                <i id="timer" class="material-icons">timer</i>
+                <div class="progress">
+                  <div id="determinate" class="determinate"></div>
+                </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="../js/ajax.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkJFUmyIXv63fitwtIVxjB0lni-evhhyg&callback=map.initMap" type="text/javascript"></script>
+    <script src="../js/map.js"></script>
+    <script src='../materialize/js/materialize.min.js'></script>
+    <script src="../js/slider.js"></script>
+    <script src="../js/compteur.js"></script>
+    <script src="../js/form.js"></script>
+    <script src="../js/canvas.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
