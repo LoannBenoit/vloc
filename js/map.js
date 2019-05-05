@@ -24,7 +24,8 @@ var map = {
               var marker = new google.maps.Marker({
                 position: station.position,
                 map: map,
-                title: station.name
+                title: station.name,
+                setIcon : 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
               });	  
                 marker.addListener('click', function (e) {
                   var stationName = marker.title;
