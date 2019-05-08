@@ -59,11 +59,12 @@ var form = {
     var ticketName = document.getElementById('ticketName');
     var ticketFirstName = document.getElementById('ticketFirstName');
     if (localStorage.getItem('name')) {
-    // if it already exists, add it's value
-    name.value = localStorage.getItem('name');
-    ticketName.textContent = localStorage.getItem('name');
-    name.style.pointerEvents = 'auto';
+      // if it already exists, add it's value
+      name.value = localStorage.getItem('name');
+      ticketName.textContent = localStorage.getItem('name');
+      name.style.pointerEvents = 'auto';
     }
+
     // Change memory by changing 'name' and 'firstName
     name.addEventListener("change", function() {
       localStorage.setItem('name', name.value);
@@ -99,6 +100,7 @@ var form = {
       timerSecondes = setInterval(compteur.startTimer, 1000);
       compteur.startTimer(true);
     }
+    
     // Set the value if it doesn't exists
     send.addEventListener("click", function() {
     sessionStorage.setItem('station', station.value);
