@@ -33,59 +33,59 @@ var signature = {
     document.getElementById('submit').style.visibility = 'visible';
   },
 
-      // Get the mouse position on canvas
-      getPosition: function (e) {
-        if (!e)
-          var e = event;
+  // Get the mouse position on canvas
+  getPosition: function (e) {
+    if (!e)
+      var e = event;
 
-        if (e.offsetX) {
-          signature.mouseX = e.offsetX;
-          signature.mouseY = e.offsetY;
-        } else if (e.layerX) {
-          signature.mouseX = e.layerX;
-          signature.mouseY = e.layerY;
-        }
-      },
+    if (e.offsetX) {
+      signature.mouseX = e.offsetX;
+      signature.mouseY = e.offsetY;
+    } else if (e.layerX) {
+      signature.mouseX = e.layerX;
+      signature.mouseY = e.layerY;
+    }
+  },
 
   // Init the canvas
   init: function () {
-      // Define the canvas context
-      ctx = document.getElementById('signature').getContext('2d');
+    // Define the canvas context
+    ctx = document.getElementById('signature').getContext('2d');
 
+    document.getElementById('submit').style.visibility = 'hidden';
+
+    // Begin the line when mouse button is down
+    document.getElementById('signature').addEventListener('mousedown', function(){
+      signature.mouseDown = 1;
+      signature.drawLine(ctx, signature.mouseX, signature.mouseY, 4);
+      document.getElementById('reset').style.display = 'block';
+      document.getElementById('submit').style.visibility = 'hidden';  
+    });
+
+    // Draw the line when mouse is moving
+    document.getElementById('signature').addEventListener('mousemove', function(e){
+      // Update the mouse co-ordinates when moved
+      signature.getPosition(e);
+
+      // Draw the line when by holding the button down
+      if (signature.mouseDown == 1) {
+          signature.drawLine(ctx, signature.mouseX, signature.mouseY, 4);
+      }
+    });
+
+    // Stop drawing when mouse button is up
+    window.addEventListener('mouseup', function(){
+      signature.mouseDown = 0;
+      // reset the last X/Y coordinates
+      signature.lastX = -1;
+      signature.lastY = -1;
+    });
+
+    // Reset the canvas on click "Effacer"
+    document.getElementById('reset').addEventListener('click', function () {
+      ctx.clearRect(0, 0, document.getElementById('signature').width, document.getElementById('signature').height);
+      document.getElementById('reset').style.display = 'none';
       document.getElementById('submit').style.visibility = 'hidden';
-
-      // Begin the line when mouse button is down
-      document.getElementById('signature').addEventListener('mousedown', function(){
-        signature.mouseDown = 1;
-        signature.drawLine(ctx, signature.mouseX, signature.mouseY, 4);
-        document.getElementById('reset').style.display = 'block';
-        document.getElementById('submit').style.visibility = 'hidden';  
-      });
-
-      // Draw the line when mouse is moving
-      document.getElementById('signature').addEventListener('mousemove', function(e){
-        // Update the mouse co-ordinates when moved
-        signature.getPosition(e);
-
-        // Draw the line when by holding the button down
-        if (signature.mouseDown == 1) {
-            signature.drawLine(ctx, signature.mouseX, signature.mouseY, 4);
-        }
-      });
-
-      // Stop drawing when mouse button is up
-      window.addEventListener('mouseup', function(){
-        signature.mouseDown = 0;
-        // reset the last X/Y coordinates
-        signature.lastX = -1;
-        signature.lastY = -1;
-      });
-
-      // Reset the canvas on click "Effacer"
-      document.getElementById('reset').addEventListener('click', function () {
-        ctx.clearRect(0, 0, document.getElementById('signature').width, document.getElementById('signature').height);
-        document.getElementById('reset').style.display = 'none';
-        document.getElementById('submit').style.visibility = 'hidden';
-      });
+    });
   },
 }
